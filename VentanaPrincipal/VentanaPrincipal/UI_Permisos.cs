@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 using A_Entidades;
 
@@ -7,7 +8,7 @@ namespace VentanaPrincipal
 {
     public partial class UI_Permisos : Form
     {
-        List<string> lista;
+        int idUsuario;
         public UI_Permisos(int idUsuario, string nombre, string apellido)
         {
             InitializeComponent();
@@ -16,6 +17,7 @@ namespace VentanaPrincipal
             MostrarListaPermisosChkListBox();
             //CompletarChkbox_Permisos(idUsuario);
             AgregarChequeos(idUsuario);
+            this.idUsuario = idUsuario;
         }
 
         private void MostrarListaPermisosChkListBox()
@@ -50,6 +52,40 @@ namespace VentanaPrincipal
 
 
 
+        }
+
+        private void chkboxList_Permisos_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+
+        }
+
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var permisos = new List<int?>();
+                for (int i = 0; i < chkboxList_Permisos.Items.Count; i++)
+                {
+                    if (chkboxList_Permisos.GetItemChecked(i))
+                    {
+                        //chkboxList_Permisos.GetItemText(i); metodo para obtener texto del item seleccionado y luego comparar via where like ......
+                        //permisos.Add(chkboxList_Permisos.GetItemText(i));
+
+                        var castedItem = (DataRowView)chkboxList_Permisos.Items[i];
+                        int? id = Convert.ToInt32(castedItem["id"]);
+                        permisos.Add(id);
+                    }
+
+
+                }
+
+                Servicios.S_Permisos.EliminarPermisos(this.idUsuario);
+                Servicios.S_Permisos.InsertarPermisos(permisos, this.idUsuario);
+            }
+            catch (Exception ex) {
+                var mensaje = ex.Message;
+                //TODO: Logger
+            }
         }
     }
 }
