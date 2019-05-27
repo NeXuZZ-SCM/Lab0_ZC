@@ -1,0 +1,6 @@
+C:\Users\nexuz\source\repos\VentanaPrincipal\A_Entidades\bin\Debug\A_Entidades.dll
+C:\Users\nexuz\source\repos\VentanaPrincipal\A_Entidades\bin\Debug\A_Entidades.pdb
+C:\Users\nexuz\source\repos\VentanaPrincipal\A_Entidades\obj\Debug\A_Entidades.csproj.CoreCompileInputs.cache
+C:\Users\nexuz\source\repos\VentanaPrincipal\A_Entidades\obj\Debug\A_Entidades.dll
+C:\Users\nexuz\source\repos\VentanaPrincipal\A_Entidades\obj\Debug\A_Entidades.pdb
+C:\Users\nexuz\source\repos\VentanaPrincipal\A_Entidades\obj\Debug\A_Entidades.csprojAssemblyReference.cache
