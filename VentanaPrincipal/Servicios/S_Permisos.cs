@@ -19,5 +19,13 @@ namespace Servicios
         {
             return Datos.D_Permisos.ConsultarChequeados(id);
         }
+        public static void InsertarPermisos(List<int?> idPermisos, int idUsuario) {
+
+            Datos.D_Permisos.InsertarPermisos(idPermisos, idUsuario);
+        }
+        public static void EliminarPermisos(int idUsuario)
+        {
+            Datos.D_Permisos.EliminarPermisos(idUsuario);
+        }
     }
 }

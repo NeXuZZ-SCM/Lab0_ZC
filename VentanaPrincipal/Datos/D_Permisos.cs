@@ -12,10 +12,9 @@ namespace Datos
 {
     public class D_Permisos
     {
-
+        private static string conexionString = ConfigurationManager.ConnectionStrings["Conexion"].ToString();
         public static DataTable MostrarPermisos(int id_Usuario)
         {
-            var conexionString = ConfigurationManager.ConnectionStrings["Conexion"].ToString();
             string consulta = "SELECT id_permisos FROM usuarios_grupos WHERE id_usuario="+id_Usuario+";";
             SqlDataAdapter adaptadorDDeDatos = new SqlDataAdapter(consulta, conexionString);
             DataTable tablaDeDatos = new DataTable();
@@ -24,7 +23,6 @@ namespace Datos
         }
         public static DataTable CompletarchklistBoxPermisos()
         {
-            var conexionString = ConfigurationManager.ConnectionStrings["Conexion"].ToString();
             string consulta = "SELECT descripcion FROM grupos;";
             SqlDataAdapter adaptadorDDeDatos = new SqlDataAdapter(consulta, conexionString);
             DataTable tablaDeDatos = new DataTable();
@@ -32,9 +30,8 @@ namespace Datos
             return tablaDeDatos;
         }
 
-        public static DataTable ConsultarChequeados(int id) {
-
-            var conexionString = ConfigurationManager.ConnectionStrings["Conexion"].ToString();
+        public static DataTable ConsultarChequeados(int id)
+        {
             string queryString = "PERMISOS_C_CHEQUEADOS_MEJORADOS3";
             var lPermisos = new List<E_PermisosChequeados>();
             var dt = new DataTable();
@@ -69,6 +66,44 @@ namespace Datos
             }
             return dt;
         }
+        public static void InsertarPermisos(List<int?> idPermisos, int idUsuario)
+        {
 
+            //string queryString = @"INSERT INTO usuarios_grupos (id_usuario, id_permisos) values (@idUsuario, @idPermisos);";
+            string queryString = "PERMISOS_A_Usuarios";
+            using (var cnn = new SqlConnection(conexionString))
+            {
+                cnn.Open();
+
+                using (var cmd = new SqlCommand(queryString, cnn))
+                {
+                    foreach (var item in idPermisos)
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@idUsuario", SqlDbType.Int)).Value = idUsuario;
+                        cmd.Parameters.Add(new SqlParameter("@idPermisos", SqlDbType.Int)).Value = item;
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+
+                }
+            }
+        }
+        public static void EliminarPermisos(int idUsuario) {
+
+            string queryDelete = @"DELETE from usuarios_grupos WHERE id_usuario = @idUsuario;";
+
+            using (var cnn = new SqlConnection(conexionString))
+            {
+                cnn.Open();
+
+                using (var cmd = new SqlCommand(queryDelete, cnn))
+                {
+                    cmd.Parameters.Add(new SqlParameter("@idUsuario", SqlDbType.Int)).Value = idUsuario;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
