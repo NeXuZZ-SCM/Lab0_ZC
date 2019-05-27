@@ -1,0 +1,5 @@
+C:\Users\nexuz\source\repos\VentanaPrincipal\UI\obj\Debug\UI.csprojAssemblyReference.cache
+C:\Users\nexuz\source\repos\VentanaPrincipal\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\nexuz\source\repos\VentanaPrincipal\UI\obj\Debug\UI.UI_Usuarios.resources
+C:\Users\nexuz\source\repos\VentanaPrincipal\UI\obj\Debug\UI.csproj.GenerateResource.cache
+C:\Users\nexuz\source\repos\VentanaPrincipal\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
