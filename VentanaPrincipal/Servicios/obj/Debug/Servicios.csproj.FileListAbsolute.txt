@@ -1,0 +1,11 @@
+C:\Users\nexuz\source\repos\VentanaPrincipal\Servicios\bin\Debug\Servicios.dll
+C:\Users\nexuz\source\repos\VentanaPrincipal\Servicios\bin\Debug\Servicios.pdb
+C:\Users\nexuz\source\repos\VentanaPrincipal\Servicios\bin\Debug\A_Entidades.dll
+C:\Users\nexuz\source\repos\VentanaPrincipal\Servicios\bin\Debug\Datos.dll
+C:\Users\nexuz\source\repos\VentanaPrincipal\Servicios\bin\Debug\A_Entidades.pdb
+C:\Users\nexuz\source\repos\VentanaPrincipal\Servicios\bin\Debug\Datos.pdb
+C:\Users\nexuz\source\repos\VentanaPrincipal\Servicios\obj\Debug\Servicios.csprojAssemblyReference.cache
+C:\Users\nexuz\source\repos\VentanaPrincipal\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\nexuz\source\repos\VentanaPrincipal\Servicios\obj\Debug\Servicios.csproj.CopyComplete
+C:\Users\nexuz\source\repos\VentanaPrincipal\Servicios\obj\Debug\Servicios.dll
+C:\Users\nexuz\source\repos\VentanaPrincipal\Servicios\obj\Debug\Servicios.pdb
