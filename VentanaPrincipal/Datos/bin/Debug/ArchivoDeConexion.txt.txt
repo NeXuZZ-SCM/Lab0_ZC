@@ -1,0 +1,1 @@
+"Server=DESKTOP-QLRLRGJ;Database=Lab0;Trusted_Connection=True;"
